@@ -1,43 +1,11 @@
 <settings>
-  <pluginGroups>
-    <pluginGroup>org.jenkins-ci.tools</pluginGroup>
-    <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
-  </pluginGroups>
-
   <localRepository>${PWD}/artifacts/m2</localRepository>
-
-  <profiles>
-    <!-- Give access to Jenkins plugins -->
-    <profile>
-      <id>jenkins</id>
-      <activation>
-        <activeByDefault>true</activeByDefault> <!-- change this to false, if you don't like to have it on per default -->
-      </activation>
-      <repositories>
-        <repository>
-          <id>repo.jenkins-ci.org</id>
-          <url>https://repo.jenkins-ci.org/public/</url>
-        </repository>
-      </repositories>
-      <pluginRepositories>
-        <pluginRepository>
-          <id>repo.jenkins-ci.org</id>
-          <url>https://repo.jenkins-ci.org/public/</url>
-        </pluginRepository>
-      </pluginRepositories>
-    </profile>
-    <profile>
-      <id>sonar</id>
-      <activation>
-          <activeByDefault>true</activeByDefault>
-      </activation>    
-    </profile>
-  </profiles>
-  <mirrors>
+   <mirrors>
     <mirror>
-      <id>repo.jenkins-ci.org</id>
-      <url>https://repo.jenkins-ci.org/public/</url>
-      <mirrorOf>m.g.o-public</mirrorOf>
+      <id>central-public-repository-group</id>
+      <mirrorOf>central</mirrorOf>
+      <name>Central Public Repository Group</name>
+      <url>https://repo1.maven.org/maven2/</url>
     </mirror>
   </mirrors>
 </settings>
